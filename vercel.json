@@ -1,0 +1,25 @@
+{
+    "version": 2,
+    "env": {
+        "DATABASE_URL" : "mysql://nizgp4jkuevg0z6u1u7h:pscale_pw_670yE7vFjMMJc11LFhXW3zYbfNAeOYRGk0pMAD5t1m2@gcp.connect.psdb.cloud/animals?sslaccept=strict"
+
+    },
+    "builds": [
+        {
+            "src": "src/main.ts",
+            "use": "@vercel/node"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "src/main.ts",
+            "methods": [
+                "GET",
+                "POST",
+                "PUT",
+                "DELETE"
+            ]
+        }
+    ]
+}
